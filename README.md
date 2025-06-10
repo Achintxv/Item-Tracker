@@ -5,28 +5,25 @@
 </head>
 <body>
 
-  <h1>🛒 Wallmart Item Tracker 📦</h1>
+  <h1>🛒 Item Tracker 📦</h1>
   <p>A full-stack web application to manage item inventory, track expiry dates, and dynamically compute discounts using AI.</p>
 
   <h2>📂 Project Structure</h2>
   <pre>
 project-root/
-├── client/               // React frontend
-│   ├── src/
-│   │   ├── components/   // Reusable UI components (Header, ItemCard etc.)
-│   │   ├── pages/        // App pages (LoginPage, ItemListPage, etc.)
-│   │   ├── services/     // API call files (Api.js)
-│   │   └── App.js
+├── /               // React frontend
+├── src/
+│   ├── components/   // Reusable UI components (Header, ItemCard etc.)
+│   ├── pages/        // App pages (LoginPage, ItemListPage, etc.)
+│   ├── services/     // API call files (Api.js)
+│   ├── App.js
 │   └── package.json
 │
 ├── server/               // NodeJS + Express backend
 │   ├── Item.js           // Mongoose Item schema
-│   ├── Client.js         // Mongoose Client schema
+│   ├── Admin.js         // Mongoose Client schema
 │   ├── server.js
 │   └── package.json
-│
-├── ai-server/ (optional) // Python Flask AI service
-│   └── app.py
 │
 └── README.md
   </pre>
@@ -38,7 +35,6 @@ project-root/
     <li>Client can view list of available items.</li>
     <li>AI microservice to calculate real-time discounts (upcoming).</li>
     <li>MongoDB for item and user storage.</li>
-    <li>Centralized API service integration.</li>
   </ul>
 
   <h2>🚀 How to Run</h2>
@@ -50,16 +46,10 @@ npm install
 node server.js
       </pre>
     </li>
-    <li>In <code>client/</code>:
+    <li>In <code>file-name</code>:
       <pre>
 npm install
 npm start
-      </pre>
-    </li>
-    <li>(Optional) In <code>ai-server/</code>:
-      <pre>
-pip install -r requirements.txt
-python app.py
       </pre>
     </li>
   </ol>
