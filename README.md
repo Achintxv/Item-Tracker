@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🛒 Wallmart Item Tracker 📦</title>
 </head>
 <body>
 
