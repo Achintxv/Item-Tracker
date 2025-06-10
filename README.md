@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🛒 Wallmart Item Tracker 📦</title>
+</head>
+<body>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1>🛒 Wallmart Item Tracker 📦</h1>
+  <p>A full-stack web application to manage item inventory, track expiry dates, and dynamically compute discounts using AI.</p>
 
-## Available Scripts
+  <h2>📂 Project Structure</h2>
+  <pre>
+project-root/
+├── client/               // React frontend
+│   ├── src/
+│   │   ├── components/   // Reusable UI components (Header, ItemCard etc.)
+│   │   ├── pages/        // App pages (LoginPage, ItemListPage, etc.)
+│   │   ├── services/     // API call files (Api.js)
+│   │   └── App.js
+│   └── package.json
+│
+├── server/               // NodeJS + Express backend
+│   ├── Item.js           // Mongoose Item schema
+│   ├── Client.js         // Mongoose Client schema
+│   ├── server.js
+│   └── package.json
+│
+├── ai-server/ (optional) // Python Flask AI service
+│   └── app.py
+│
+└── README.md
+  </pre>
 
-In the project directory, you can run:
+  <h2>📦 Features</h2>
+  <ul>
+    <li>Admin and Client login/register system.</li>
+    <li>Admin can add items with expiry date, price, and max discount.</li>
+    <li>Client can view list of available items.</li>
+    <li>AI microservice to calculate real-time discounts (upcoming).</li>
+    <li>MongoDB for item and user storage.</li>
+    <li>Centralized API service integration.</li>
+  </ul>
 
-### `npm start`
+  <h2>🚀 How to Run</h2>
+  <ol>
+    <li>Start MongoDB server locally.</li>
+    <li>In <code>server/</code>:
+      <pre>
+npm install
+node server.js
+      </pre>
+    </li>
+    <li>In <code>client/</code>:
+      <pre>
+npm install
+npm start
+      </pre>
+    </li>
+    <li>(Optional) In <code>ai-server/</code>:
+      <pre>
+pip install -r requirements.txt
+python app.py
+      </pre>
+    </li>
+  </ol>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <h2>📊 Tech Stack</h2>
+  <ul>
+    <li>ReactJS (frontend)</li>
+    <li>NodeJS + Express (backend)</li>
+    <li>MongoDB + Mongoose</li>
+    <li>Python + Flask (AI microservice)</li>
+  </ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <h2>📞 API Endpoints</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>POST</td>
+        <td>/login</td>
+        <td>User/admin login</td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/register-client</td>
+        <td>Client registration</td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/items</td>
+        <td>Get all items</td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/add-item</td>
+        <td>Add a new item (Admin only)</td>
+      </tr>
+    </tbody>
+  </table>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</body>
+</html>
